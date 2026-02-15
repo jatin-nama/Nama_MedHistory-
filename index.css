@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #2563eb;
+  --color-primary-dark: #1d4ed8;
+  --color-primary-light: #60a5fa;
+  --color-accent: #f97316;
+  --color-accent-dark: #ea580c;
+  --color-accent-light: #fb923c;
+  
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+  
+  --font-sans: "Inter", "Poppins", ui-sans-serif, system-ui, sans-serif;
+  
+  --shadow-premium: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
+@layer base {
+  body {
+    @apply bg-white text-slate-900 font-sans;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-2xl font-semibold transition-all hover:bg-primary-dark active:scale-95 shadow-md hover:shadow-lg disabled:opacity-50 disabled:pointer-events-none;
+  }
+  
+  .btn-accent {
+    @apply bg-accent text-white px-6 py-3 rounded-2xl font-semibold transition-all hover:bg-accent-dark active:scale-95 shadow-md hover:shadow-lg disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .card-premium {
+    @apply bg-white rounded-3xl p-6 shadow-premium border border-slate-50 transition-all hover:shadow-xl;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all;
+  }
+
+  .chip {
+    @apply px-4 py-2 rounded-full border border-slate-200 bg-white text-slate-600 font-medium cursor-pointer transition-all hover:border-primary hover:text-primary;
+  }
+
+  .chip-active {
+    @apply bg-primary text-white border-primary shadow-md;
+  }
+}
